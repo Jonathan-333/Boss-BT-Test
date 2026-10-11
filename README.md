@@ -47,7 +47,7 @@ Selector
 - **Joueur** : déplacement, dash (avec un dash de précision à la souris), points de vie et mana.
 - **Combat** : projectiles, dégâts au contact et invincibilité temporaire après un coup.
 - **Effets** : secousse de caméra, particules, post-processing et ralenti.
-- **Événements** : un système d'événements basé sur des `ScriptableObject` (inspiré de la vidéo [*ULTIMATE Event System for Unity Beginners*](https://www.youtube.com/watch?v=7_dyDmF0Ktw) de This Is GameDev).
+- **Événements** : un système d'événements basé sur des `ScriptableObject`
 
 ## Contrôles
 
