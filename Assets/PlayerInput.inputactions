@@ -177,6 +177,17 @@
                     "action": "DashPrecise",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8b44fcec-cd7c-472f-bfb7-12d0db8b3ca6",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "DashPrecise",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

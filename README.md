@@ -53,7 +53,7 @@ Selector
 |---|---|---|
 | Se déplacer | WASD ou flèches | Joystick gauche |
 | Dash | Espace | A |
-| Dash de précision | Clic gauche | |
+| Dash de précision | Clic gauche (vise la souris) | Gâchette droite (RT), visée au joystick droit |
 
 ## Lancer le projet
 
