@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7723137438288326867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1389139500489475354}
+  - component: {fileID: 2149017407744591923}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1389139500489475354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723137438288326867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2149017407744591923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723137438288326867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 903f6a7b627306a409c4cc37c0f6c1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventManager
+  <EntityDeath>k__BackingField: {fileID: 11400000, guid: bf6438aa4dd5aa04b8d4f07dc184d915, type: 2}
+  <PlayerTakeDamage>k__BackingField: {fileID: 11400000, guid: 22711ec21b32a7744a5ddcb365faa7c1, type: 2}
+  <PlayerHealthChanged>k__BackingField: {fileID: 11400000, guid: e8cd30c962012d549921718303ae9aed, type: 2}
+  <PlayerDeath>k__BackingField: {fileID: 11400000, guid: 2ef737318ba124246b1a41398ec54258, type: 2}
+  <EnemyTakeDamage>k__BackingField: {fileID: 11400000, guid: 84125899996a87e4d8f4d51ba351e904, type: 2}
+  <EnemyDeath>k__BackingField: {fileID: 11400000, guid: 851f7a09eebf2cf4493f451d4c80d168, type: 2}
+  <BossTakeDamage>k__BackingField: {fileID: 11400000, guid: b4c6217a1a217db40a421f9a1fab4d39, type: 2}
+  <BossHealthInit>k__BackingField: {fileID: 11400000, guid: aed3964a3d22fad4fab0529b32da082d, type: 2}
