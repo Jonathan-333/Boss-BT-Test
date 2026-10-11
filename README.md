@@ -2,6 +2,8 @@
 
 Un petit jeu Unity en vue de dessus où les ennemis et le boss sont contrôlés par un **behaviour tree** écrit à la main en C#, sans plugin. Fait à deux au cégep, sur Unity 6.
 
+▶️ **[Jouer sur itch.io](https://jonathanb12.itch.io/boss-bt-test)** (dans le navigateur, clavier/souris ou manette)
+
 <!-- Capture d'écran ou GIF du jeu : à ajouter ici (ex. docs/gameplay.gif) -->
 
 ## Le behaviour tree
