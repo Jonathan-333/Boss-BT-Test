@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
 	public static float ScaledDeltaTime => Time.deltaTime * Instance.TimeScale;
 
 
-	private Dictionary<GUID, float> timeScales = new Dictionary<GUID, float>();
+	private Dictionary<Guid, float> timeScales = new Dictionary<Guid, float>();
 
 	private void UpdateTimeScale()
 	{
@@ -66,21 +67,21 @@ public class GameManager : MonoBehaviour
 		Player = player != null ? player.GetComponent<EntityController>() : null;
 	}
 
-	public GUID AddTimeScaler(float timeScale)
+	public Guid AddTimeScaler(float timeScale)
 	{
-		GUID guid = GUID.Generate();
+		Guid guid = Guid.NewGuid();
 
 		timeScales.Add(guid, Mathf.Max(0.0f, timeScale));
 		UpdateTimeScale();
 
 		return guid;
 	}
-	public void SetTimeScaler(float timeScale, GUID guid)
+	public void SetTimeScaler(float timeScale, Guid guid)
 	{
 		timeScales[guid] = timeScale;
 		UpdateTimeScale();
 	}
-	public void RemoveTimeScaler(GUID guid)
+	public void RemoveTimeScaler(Guid guid)
 	{
 		if (timeScales.ContainsKey(guid))
 		{

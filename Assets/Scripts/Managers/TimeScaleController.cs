@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class TimeScaleController : MonoBehaviour
     [SerializeField] private AnimationCurve slowDownScaleModulation = AnimationCurve.Constant(0.0f, 1.0f, 1.0f);
 
     Coroutine coroutine;
-    GUID guid;
+    Guid guid;
 
 	private void Start()
 	{
