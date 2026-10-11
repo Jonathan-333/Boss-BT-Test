@@ -58,7 +58,7 @@ Selector
 ## Lancer le projet
 
 1. Ouvrir le dossier avec **Unity 6000.2.7f2** (ou une version 6000.2 plus récente).
-2. Ouvrir la scène `Assets/Scenes/JO.unity` et appuyer sur Play.
+2. Ouvrir la scène `Assets/Scenes/MainGame.unity` et appuyer sur Play.
 
 Technique : Unity 6, URP, Input System, C#.
 
