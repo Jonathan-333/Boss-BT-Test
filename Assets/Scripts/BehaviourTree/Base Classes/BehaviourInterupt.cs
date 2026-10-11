@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class BehaviourInterupt
@@ -9,6 +8,11 @@ public class BehaviourInterupt
     bool[] conditionStates;
     bool running = true;
     BehaviourNode[] attachedNodes;
+
+    // Checked every 0.1 s (real time) from BehaviourTree.Update, instead of an async loop with
+    // Task.Delay: no background tasks, so it works on WebGL and stops with its tree
+    const float CheckInterval = 0.1f;
+    float timeUntilCheck = CheckInterval;
 
     public BehaviourInterupt(BehaviourTree _behaviourTree, BehaviourCondition[] _behaviourConditions, BehaviourNode[] _attachedNodes = null)
     {
@@ -24,7 +28,6 @@ public class BehaviourInterupt
         behaviourTree.RegisterInterupt(this);
 
         UpdateState();
-        _ = CheckInteruptLoop();
     }
 
     public void Stop()
@@ -32,34 +35,28 @@ public class BehaviourInterupt
         running = false;
     }
 
-    private async Task CheckInteruptLoop()
+    public void Tick(float unscaledDeltaTime)
     {
-		while (running)
+		if (!running) return;
+
+		timeUntilCheck -= unscaledDeltaTime;
+		if (timeUntilCheck > 0.0f) return;
+		timeUntilCheck = CheckInterval;
+
+		if (attachedNodes != null && attachedNodes.Length > 0 && !attachedNodes.Any(node => node == behaviourTree.activeNode))
 		{
-			if (behaviourTree == null)
+			return;
+		}
+
+		for (int i = 0; i < behaviourConditions.Length; i++)
+		{
+			if (!running) return;
+
+			if (behaviourConditions[i].Evaluate() != conditionStates[i])
 			{
-				Stop();
-				return;
+				behaviourTree.Interupt();
+				UpdateState();
 			}
-
-			if (attachedNodes != null && attachedNodes.Length > 0 && !attachedNodes.Any(node => node == behaviourTree.activeNode))
-			{
-				await Task.Delay(100);
-				continue;
-			}
-
-			for (int i = 0; i < behaviourConditions.Length; i++)
-			{
-				if (!running) return;
-
-				if (behaviourConditions[i].Evaluate() != conditionStates[i])
-				{
-					behaviourTree.Interupt();
-					UpdateState();
-				}
-			}
-
-			await Task.Delay(100);
 		}
 	}
 

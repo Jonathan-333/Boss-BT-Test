@@ -12,6 +12,12 @@ public abstract class BehaviourTree : MonoBehaviour
 
     private void Update()
     {
+        // for, not foreach: an interupt can restart the tree while the list is being read
+        for (int i = 0; i < interupts.Count; i++)
+        {
+            interupts[i].Tick(Time.unscaledDeltaTime);
+        }
+
         if (activeNode == null) return;
 
         activeNode.Tick(GameManager.ScaledDeltaTime);
